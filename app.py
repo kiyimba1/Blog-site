@@ -1,5 +1,5 @@
 from flask import Flask, g
-from flask_cache import Cache
+# from flask_cache import Cache
 from flask_migrate import Migrate, MigrateCommand
 from flask_script import Manager
 from flask_sqlalchemy import SQLAlchemy
@@ -20,7 +20,7 @@ app.config.from_object(Configuration)
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 api = APIManager(app, flask_sqlalchemy_db=db)
-cache = Cache(app, config={'CACHE_TYPE': 'redis'})
+# cache = Cache(app, config={'CACHE_TYPE': 'redis'})
 
 manager = Manager(app)
 manager.add_command('db', MigrateCommand)
